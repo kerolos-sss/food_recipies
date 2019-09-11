@@ -12,7 +12,7 @@ import RxSwift
 class EdmamSearchApi: SearchApiService  {
 
     
-    
+    let sessionManager = Provider.sessionManager
     
     func search(query: String, page: Int, pageSize: Int) -> Observable<[RecipeViewData]> {
         
@@ -49,7 +49,7 @@ class EdmamSearchApi: SearchApiService  {
         
         
         
-        Provider.sessionManager.request( (components?.url)!).responseJSON(queue: EdmamSearchApi.utilityQueue) { response in
+        sessionManager.request( (components?.url)!).responseJSON(queue: EdmamSearchApi.utilityQueue) { response in
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result

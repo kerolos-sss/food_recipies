@@ -62,6 +62,7 @@ class HomeViewController: UIViewController {
         lastPageReached = false
     }
     func getData(){
+        
         var pageIndex = 0
         if lastPageReached{
             return
@@ -84,12 +85,19 @@ class HomeViewController: UIViewController {
         
         Provider.apiService.search(query: query, page: pageIndex, pageSize: pageSize).subscribe(onNext: { [unowned self] (items) in
             
-            if self.data == nil {
-                self.data = []
+
+            DispatchQueue.main.async { [unowned self] in
+                if self.data == nil {
+                    self.data = []
+                }
+                self.data?.append(items)
+                
+                if items.count < self.pageSize{
+                    self.lastPageReached = true
+                }
+                
+                self.tableView.reloadData()
             }
-            self.data?.append(items)
-            self.tableView.reloadData()
-            
         }).disposed(by: disposeBag)
     }
  
