@@ -59,6 +59,7 @@ class HomeViewController: UIViewController {
         data = []
         query = searchBar.text
         tableView.reloadData()
+        lastPageReached = false
     }
     func getData(){
         var pageIndex = 0

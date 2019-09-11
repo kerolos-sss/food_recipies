@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class Provider{
-    static let apiService: SearchApiService = MockSearchApiService()
+    static let apiService: SearchApiService = EdmamSearchApi()
     
     public static var sessionManager: Alamofire.SessionManager  {
 
