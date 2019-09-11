@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Food_Recipies" customModuleProvider="target">
             <connections>
                 <outlet property="searchBar" destination="RoR-py-PpM" id="Q17-Ej-veA"/>
+                <outlet property="tableView" destination="4UG-dM-GNK" id="hWX-XJ-CH5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,16 +22,24 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" misplaced="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="RoR-py-PpM">
-                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="RoR-py-PpM">
+                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4UG-dM-GNK">
+                    <rect key="frame" x="0.0" y="100" width="414" height="750"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RoR-py-PpM" secondAttribute="trailing" id="Foh-eY-qFl"/>
+                <constraint firstItem="4UG-dM-GNK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QPl-QA-6IP"/>
                 <constraint firstItem="RoR-py-PpM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bjk-oD-TbH"/>
+                <constraint firstItem="4UG-dM-GNK" firstAttribute="top" secondItem="RoR-py-PpM" secondAttribute="bottom" id="dND-L1-rRE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4UG-dM-GNK" secondAttribute="bottom" constant="12" id="fng-z4-yjo"/>
                 <constraint firstItem="RoR-py-PpM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rUH-lC-sFs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4UG-dM-GNK" secondAttribute="trailing" id="yfw-JB-HMR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

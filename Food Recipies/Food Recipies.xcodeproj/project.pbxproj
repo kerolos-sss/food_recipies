@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0FF97C5D5269F811D6992694 /* Pods_Food_RecipiesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535C4D7D79E640AE556E4961 /* Pods_Food_RecipiesUITests.framework */; };
 		74F01BB04E9BF3816B8AA4C9 /* Pods_Food_RecipiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEB4E5221E4C1AD01EF957D /* Pods_Food_RecipiesTests.framework */; };
+		842BF26723292FAF004F212A /* RecipePreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BF26623292FAF004F212A /* RecipePreviewTableViewCell.swift */; };
+		842BF26923293002004F212A /* RecipePreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842BF26823293002004F212A /* RecipePreviewTableViewCell.xib */; };
+		842BF26C23293186004F212A /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BF26B23293186004F212A /* ApiService.swift */; };
+		842BF26E23293212004F212A /* EdmamSearchApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BF26D23293212004F212A /* EdmamSearchApi.swift */; };
+		842BF27023293CE4004F212A /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BF26F23293CE4004F212A /* Provider.swift */; };
 		845672D8231B1D6400A790E5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845672D6231B1D6400A790E5 /* HomeViewController.swift */; };
 		845672D9231B1D6400A790E5 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845672D7231B1D6400A790E5 /* HomeViewController.xib */; };
 		845672DD231B1DB200A790E5 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845672DC231B1DB200A790E5 /* Navigator.swift */; };
@@ -43,6 +48,11 @@
 		2DFA1AF61C6F52A1F8B0F5A1 /* Pods_Food_Recipies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Recipies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		535C4D7D79E640AE556E4961 /* Pods_Food_RecipiesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_RecipiesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		780725DC31D7AD8E91ED998E /* Pods-Food Recipies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Recipies.debug.xcconfig"; path = "Target Support Files/Pods-Food Recipies/Pods-Food Recipies.debug.xcconfig"; sourceTree = "<group>"; };
+		842BF26623292FAF004F212A /* RecipePreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipePreviewTableViewCell.swift; sourceTree = "<group>"; };
+		842BF26823293002004F212A /* RecipePreviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipePreviewTableViewCell.xib; sourceTree = "<group>"; };
+		842BF26B23293186004F212A /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		842BF26D23293212004F212A /* EdmamSearchApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdmamSearchApi.swift; sourceTree = "<group>"; };
+		842BF26F23293CE4004F212A /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		845672D6231B1D6400A790E5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		845672D7231B1D6400A790E5 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		845672DC231B1DB200A790E5 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -105,6 +115,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		842BF26523292F4C004F212A /* views */ = {
+			isa = PBXGroup;
+			children = (
+				842BF26623292FAF004F212A /* RecipePreviewTableViewCell.swift */,
+				842BF26823293002004F212A /* RecipePreviewTableViewCell.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		842BF26A23293165004F212A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				842BF26B23293186004F212A /* ApiService.swift */,
+				842BF26D23293212004F212A /* EdmamSearchApi.swift */,
+				842BF26F23293CE4004F212A /* Provider.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		845672DA231B1D6E00A790E5 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +176,8 @@
 		84ECAFC3231873B90070DEA3 /* Food Recipies */ = {
 			isa = PBXGroup;
 			children = (
+				842BF26A23293165004F212A /* API */,
+				842BF26523292F4C004F212A /* views */,
 				845672DB231B1D9900A790E5 /* Navigation */,
 				845672DA231B1D6E00A790E5 /* controllers */,
 				84ECAFC4231873B90070DEA3 /* AppDelegate.swift */,
@@ -301,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842BF26923293002004F212A /* RecipePreviewTableViewCell.xib in Resources */,
 				84ECAFCF231873BC0070DEA3 /* LaunchScreen.storyboard in Resources */,
 				84ECAFCC231873BC0070DEA3 /* Assets.xcassets in Resources */,
 				84ECAFCA231873B90070DEA3 /* Main.storyboard in Resources */,
@@ -469,6 +501,10 @@
 			files = (
 				84ECAFC7231873B90070DEA3 /* ViewController.swift in Sources */,
 				845672DD231B1DB200A790E5 /* Navigator.swift in Sources */,
+				842BF26E23293212004F212A /* EdmamSearchApi.swift in Sources */,
+				842BF26C23293186004F212A /* ApiService.swift in Sources */,
+				842BF27023293CE4004F212A /* Provider.swift in Sources */,
+				842BF26723292FAF004F212A /* RecipePreviewTableViewCell.swift in Sources */,
 				84ECAFC5231873B90070DEA3 /* AppDelegate.swift in Sources */,
 				845672D8231B1D6400A790E5 /* HomeViewController.swift in Sources */,
 			);
@@ -576,7 +612,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -631,7 +667,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

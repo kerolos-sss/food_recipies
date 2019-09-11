@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="id_RecipePreviewTableViewCel" rowHeight="113" id="g2p-u0-kOL" customClass="RecipePreviewTableViewCell" customModule="RecipeSearch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="113"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g2p-u0-kOL" id="Hem-jT-6BI">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="112.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="we1-jf-bxH">
+                        <rect key="frame" x="284" y="16" width="81" height="81"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="we1-jf-bxH" secondAttribute="height" multiplier="1:1" id="ToZ-a7-QH9"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEM-Wp-V7z">
+                        <rect key="frame" x="15" y="16" width="261" height="57.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3v9-Jt-0hu">
+                        <rect key="frame" x="15" y="81.5" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jcs-Wr-XVB">
+                        <rect key="frame" x="234" y="81" width="42" height="20.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83d-8X-xif">
+                                <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eEM-Wp-V7z" secondAttribute="trailing" constant="20" symbolic="YES" id="2fr-Lh-UzH"/>
+                    <constraint firstItem="eEM-Wp-V7z" firstAttribute="leading" secondItem="Hem-jT-6BI" secondAttribute="leading" constant="15" id="5Ly-wi-pfN"/>
+                    <constraint firstAttribute="trailing" secondItem="we1-jf-bxH" secondAttribute="trailing" constant="10" id="6Ej-eq-ene"/>
+                    <constraint firstAttribute="bottom" secondItem="3v9-Jt-0hu" secondAttribute="bottom" constant="10.5" id="8UW-h9-qLh"/>
+                    <constraint firstItem="we1-jf-bxH" firstAttribute="leading" secondItem="eEM-Wp-V7z" secondAttribute="trailing" constant="8" symbolic="YES" id="AL7-pL-Jz8"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="we1-jf-bxH" secondAttribute="bottom" constant="15.5" id="BSm-Gb-2n5"/>
+                    <constraint firstItem="jcs-Wr-XVB" firstAttribute="top" secondItem="eEM-Wp-V7z" secondAttribute="bottom" constant="7.5" id="Fo6-4I-cir"/>
+                    <constraint firstItem="eEM-Wp-V7z" firstAttribute="top" secondItem="Hem-jT-6BI" secondAttribute="top" constant="16" id="PHK-Wi-Ol3"/>
+                    <constraint firstItem="3v9-Jt-0hu" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="jcs-Wr-XVB" secondAttribute="leading" id="PNK-t5-6F1"/>
+                    <constraint firstItem="jcs-Wr-XVB" firstAttribute="top" secondItem="we1-jf-bxH" secondAttribute="bottom" constant="-16" id="UrK-hB-iJf"/>
+                    <constraint firstItem="we1-jf-bxH" firstAttribute="leading" secondItem="jcs-Wr-XVB" secondAttribute="trailing" constant="8" id="WC6-29-Yj6"/>
+                    <constraint firstItem="we1-jf-bxH" firstAttribute="top" secondItem="Hem-jT-6BI" secondAttribute="top" constant="16" id="chg-eY-s8g"/>
+                    <constraint firstItem="3v9-Jt-0hu" firstAttribute="top" secondItem="eEM-Wp-V7z" secondAttribute="bottom" constant="8" id="dRh-5B-n7d"/>
+                    <constraint firstAttribute="bottom" secondItem="jcs-Wr-XVB" secondAttribute="bottom" constant="11" id="dtg-yR-4Nc"/>
+                    <constraint firstAttribute="trailing" secondItem="eEM-Wp-V7z" secondAttribute="trailing" constant="99" id="jnx-gk-lsj"/>
+                    <constraint firstItem="3v9-Jt-0hu" firstAttribute="leading" secondItem="Hem-jT-6BI" secondAttribute="leading" constant="15" id="xUa-gV-x2a"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="healthLabelsStack" destination="jcs-Wr-XVB" id="2dm-zQ-4ba"/>
+                <outlet property="publisherLabel" destination="3v9-Jt-0hu" id="qen-am-WNI"/>
+                <outlet property="ratingLabel" destination="83d-8X-xif" id="Mgb-kl-gP1"/>
+                <outlet property="recipeImage" destination="we1-jf-bxH" id="JWW-6C-I1j"/>
+                <outlet property="recipeTitleLabel" destination="eEM-Wp-V7z" id="57e-Da-hEq"/>
+            </connections>
+            <point key="canvasLocation" x="209.42028985507247" y="-42.522321428571423"/>
+        </tableViewCell>
+    </objects>
+</document>
