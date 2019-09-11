@@ -56,8 +56,9 @@ class HomeViewController: UIViewController {
     }
 
     func updateQuery(){
-
-        
+        data = []
+        query = searchBar.text
+        tableView.reloadData()
     }
     func getData(){
         var pageIndex = 0
@@ -76,7 +77,11 @@ class HomeViewController: UIViewController {
             return
         }
         
-        Provider.apiService.search(query: "", page: pageIndex, pageSize: pageSize).subscribe(onNext: { [unowned self] (items) in
+        guard let query = query, !query.isEmpty else {
+            return
+        }
+        
+        Provider.apiService.search(query: query, page: pageIndex, pageSize: pageSize).subscribe(onNext: { [unowned self] (items) in
             
             if self.data == nil {
                 self.data = []
