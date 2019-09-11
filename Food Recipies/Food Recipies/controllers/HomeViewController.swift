@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
     private var lastPageReached = false
     var data: [[RecipeViewData]]?
     
+    private let dataGettingDebouncer = PublishSubject<Bool>()
     
     
     let disposeBag = DisposeBag()
@@ -53,6 +54,11 @@ class HomeViewController: UIViewController {
 //            self.searchBar.resignFirstResponder()
 //        }).disposed(by: disposeBag)
         
+        // just using it to hold off multiple calls to get data
+        dataGettingDebouncer.debounce(RxTimeInterval.microseconds(1000), scheduler: MainScheduler.instance).subscribe(onNext: { [unowned self](flag) in
+            self.getDataImplimentation()
+        }).disposed(by: disposeBag)
+        
     }
 
     func updateQuery(){
@@ -62,7 +68,9 @@ class HomeViewController: UIViewController {
         lastPageReached = false
     }
     func getData(){
-        
+        dataGettingDebouncer.onNext(true)
+    }
+    func getDataImplimentation(){
         var pageIndex = 0
         if lastPageReached{
             return
