@@ -11,9 +11,11 @@ import RxSwift
 struct RecipeViewData {
     // normally it would be a mapping step but it is done here for the time being
     var imageUrl: URL?
+    var sourceUrl: URL?
     var title: String?
     var source: String?
     var healthLabels: [String]?
+    var ingredientLines: [String]?
 }
 
 
@@ -38,8 +40,16 @@ class MockSearchApiService : SearchApiService{
     
     func getMockData() -> [RecipeViewData] {
         let jsonData = mockJsonString.data(using: .utf8)!
-        let array = try! JSONDecoder().decode([RecipeViewData].self, from: jsonData)
+        var array = try! JSONDecoder().decode([RecipeViewData].self, from: jsonData)
 //        print(array)
+        array = array.map({ (item) -> RecipeViewData in
+            var item = item
+            item.ingredientLines = [ "Flour", "Milk", "Eggs" ]
+            item.sourceUrl = URL(string: "http://nomnompaleo.com/post/1396914614/breakfast-dinner-tonight")
+            
+            item.imageUrl = URL(string:"https://ichef.bbci.co.uk/news/660/cpsprodpb/3DAD/production/_104898751_gettyimages-844466808.jpg")
+            return item
+        })
         return array
     }
     

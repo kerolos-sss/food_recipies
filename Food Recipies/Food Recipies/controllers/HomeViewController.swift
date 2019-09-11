@@ -36,6 +36,7 @@ class HomeViewController: UIViewController {
         let nib = UINib(nibName: RecipePreviewTableViewCell.nibName, bundle: nil)
         tableView.register( nib, forCellReuseIdentifier:RecipePreviewTableViewCell.reuseIdentifier )
         tableView.dataSource = self
+        tableView.delegate = self
         
         // Do any additional setup after loading the view.
 //        searchBar.rx.text.subscribe(onNext: { [unowned self] (text) in
@@ -143,3 +144,10 @@ extension HomeViewController: UITableViewDataSource{
     
 }
 
+extension HomeViewController : UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = getItem(index: indexPath.item)!
+
+        Navigator.navigate(controllerType: DetailsViewController.self, data: item)
+    }
+}
