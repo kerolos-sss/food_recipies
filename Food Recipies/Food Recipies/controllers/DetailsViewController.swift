@@ -85,20 +85,28 @@ extension DetailsViewController : UITableViewDataSource{
             return cell
             
         }
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: IngredientTableViewCell.reuseIdentifier) as! IngredientTableViewCell
+        // this could be made once only
+        cell.textLabel?.lineBreakMode = .byWordWrapping
+        cell.textLabel?.numberOfLines = 0
+        
+        
         if indexPath.section == 2 {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: IngredientTableViewCell.reuseIdentifier) as! IngredientTableViewCell
             cell.textLabel?.text = recipe.source
             cell.textLabel?.textColor = .blue
             
             return cell
         }
+        cell.textLabel?.textColor = .black
+        cell.textLabel?.text = recipe.ingredientLines?[indexPath.item]
+        
+        
         // ingredient
  
-        let cell = tableView.dequeueReusableCell(withIdentifier: IngredientTableViewCell.reuseIdentifier) as! IngredientTableViewCell
-        cell.textLabel?.textColor = .black
-        cell.textLabel?.text = recipe.ingredientLines?[indexPath.item] 
-    
+
+
         
         
         return cell

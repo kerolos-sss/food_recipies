@@ -46,8 +46,13 @@ class RecipePreviewTableViewCell: UITableViewCell {
         item.healthLabels?.forEach({ (tag) in
             let l = UILabel();
             l.text = tag
+            l.lineBreakMode = .byWordWrapping
+            l.numberOfLines = 0
+            
             self.healthLabelsStack.addArrangedSubview(l)
         })
+        
+        
     }
     
     
